@@ -53,64 +53,7 @@ The captions for n8n samples are pre-set:
 
 To change a caption, search for the filename in `index.html` and edit the value in the `autoCaptions` object.
 
----
 
-## How to go live (free options)
-
-### Option A — Netlify (easiest)
-1. Go to https://netlify.com → sign up free.
-2. Drag your entire project folder (with `index.html` + `images/`) onto the Netlify drop zone.
-3. You get a live URL instantly (e.g. `piolo-bagotao.netlify.app`).
-4. Connect a custom domain anytime from the Netlify dashboard.
-
-### Option B — GitHub Pages
-1. Push your files to a GitHub repo.
-2. Go to repo Settings → Pages → set source to `main` branch, root folder.
-3. Site goes live at `yourusername.github.io/repo-name`.
-
-### Option C — Vercel
-1. Go to https://vercel.com → sign up with GitHub.
-2. Import the repo → deploy. Same instant URL flow as Netlify.
-
----
-
-## How to update the Calendly link
-
-Search for `calendly.com/piolobagotao` in `index.html` and replace with your actual Calendly URL. It appears in two spots — the "Set a Meeting" contact card.
-
----
-
-## How to update other contact info
-
-| What | Where to find it in `index.html` |
-|------|----------------------------------|
-| Email | Search `piolobagotao@gmail.com` |
-| WhatsApp number | Search `639666856413` |
-| LinkedIn URL | Search `linkedin.com/in/piolo-bagotao` |
-| Canva portfolio | Search `piolob.my.canva.site` |
-
----
-
-## How to add or remove a brand from the carousel
-
-Open `index.html`, find the `brands` array in the `<script>` block, and edit:
-
-```js
-const brands = [
-  { name: 'INGCO', domain: 'ingco.com', url: 'https://www.ingco.com' },
-  // add/remove/reorder here
-];
-```
-
-Logos are auto-fetched from `https://logo.clearbit.com/<domain>` — if that fails, the brand's first letter shows as a stylized fallback. Frames are grouped 4 brands at a time on desktop, 2 at a time on mobile.
-
----
-
-## How to change a writing sample
-
-Find the `<section id="writing">` block in `index.html` and edit the three `<a class="writing-card">` elements. Each has a domain, a title, and an `href`.
-
----
 
 ## Local preview
 
