@@ -688,6 +688,13 @@
   /* ============ AUTOMATION ============ */
   .auto-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   @media (max-width: 720px) { .auto-grid { grid-template-columns: 1fr; } }
+  .dc-track > .auto-card {
+    flex: 0 0 calc(50% - 7px);
+    scroll-snap-align: start;
+  }
+  @media (max-width: 720px) {
+    .dc-track > .auto-card { flex-basis: 88%; }
+  }
   .auto-card {
     border: 1px solid var(--border); border-radius: 16px;
     overflow: hidden; background: var(--bg-card);
@@ -785,7 +792,13 @@
     .section-lead { font-size: 15px; }
     .hero { padding: 56px 0 48px; }
     .hero-flag { font-size: 12px; padding: 6px 12px 6px 8px; margin-bottom: 24px; }
-    .hero-name { margin-bottom: 24px; }
+    .hero-grid { grid-template-columns: 1fr 96px; gap: 16px; align-items: start; }
+    .portrait-wrap { border-radius: 50%; transform: none; margin-top: 4px; border: 2px solid var(--border); }
+    .portrait-wrap:hover { transform: scale(1.02); }
+    .portrait-wrap::after { display: none; }
+    .portrait-wrap .ph { font-size: 48px; }
+    .portrait-badge { display: none; }
+    .hero-name { margin-bottom: 24px; font-size: 44px; }
     .hero-tag { font-size: 16px; margin-bottom: 28px; }
     .hero-meta { padding-top: 22px; gap: 12px; }
     .hero-meta-row { grid-template-columns: 92px 1fr; font-size: 13px; }
@@ -834,7 +847,7 @@
         <a class="nav-link" href="#writing">Writing</a>
         <a class="nav-link" href="#contact">Contact</a>
       </div>
-      <a class="pill" href="#contact"><span class="live"></span>Open to projects</a>
+      <a class="pill" href="#contact"><span class="live"></span>Open for Work</a>
       <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -850,7 +863,6 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="hero-flag reveal"><span class="live"></span>SEO Specialist <span class="sep">·</span> Content Strategist <span class="sep">·</span> Operations</div>
         <h1 class="hero-name reveal">Piolo <span class="it">Bagotao.</span></h1>
         <p class="hero-tag reveal"><b>Content writing is my main craft.</b> I also build the systems around it — keyword strategy, technical SEO, team workflows, and smart automation — so the writing actually ranks, converts, and scales.</p>
         <div class="cta-row reveal">
@@ -866,7 +878,7 @@
         <dl class="hero-meta reveal">
           <div class="hero-meta-row">
             <dt class="hero-meta-label">Status</dt>
-            <dd class="hero-meta-val"><span class="live"></span>Open to part-time &amp; contract work</dd>
+            <dd class="hero-meta-val"><span class="live"></span>Open for work &amp; contract work</dd>
           </div>
           <div class="hero-meta-row">
             <dt class="hero-meta-label">Based in</dt>
@@ -988,8 +1000,8 @@
       </div>
       <div class="stat">
         <div class="stat-tag">Articles shipped</div>
-        <div class="stat-num">500<span class="sup">+</span></div>
-        <div class="stat-label">Long-form, technical, and editorial — all built to rank.</div>
+        <div class="stat-num">1000<span class="sup">+</span></div>
+        <div class="stat-label">Articles, scripts, product copy, social media captions, and carousel briefs.</div>
       </div>
       <div class="stat">
         <div class="stat-tag">Hours saved</div>
@@ -1024,7 +1036,7 @@
         <div class="exp-idx">01</div>
         <div class="exp-role">SEO &amp; Operations Lead</div>
         <div class="exp-co">Majestix Collection<small>Luxury watch platform</small></div>
-        <div class="exp-date">Sep 2025<span class="now">Now</span></div>
+        <div class="exp-date">Sep 2025 — Present</div>
       </div>
       <div class="exp-row">
         <div class="exp-idx">02</div>
@@ -1119,6 +1131,8 @@
           <span class="chip"><span class="dot"></span>Workflow Design</span>
           <span class="chip"><span class="dot"></span>Content Operations</span>
           <span class="chip"><span class="dot"></span>Editorial Standards</span>
+          <span class="chip"><span class="dot"></span>SOP Development</span>
+          <span class="chip"><span class="dot"></span>Course Training</span>
         </div>
       </div>
     </div>
@@ -1181,7 +1195,17 @@
       <div class="reveal"><div class="eyebrow">09 — Automation</div></div>
       <h2 class="section-title reveal">Workflow <span class="it">samples.</span></h2>
     </div>
-    <div class="auto-grid stagger" id="autoGrid"></div>
+    <div class="reveal design-carousel">
+      <button class="dc-btn dc-prev" id="autoPrev" type="button" aria-label="Previous workflow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="dc-viewport">
+        <div class="dc-track" id="autoTrack"></div>
+      </div>
+      <button class="dc-btn dc-next" id="autoNext" type="button" aria-label="Next workflow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -1226,7 +1250,7 @@
     <div class="contact-card reveal">
       <div class="contact-grid">
         <div>
-          <h3 class="contact-h">Open to <span class="it">part-time,</span> contract, and consulting work.</h3>
+          <h3 class="contact-h">Open to <span class="it">part-time</span> (30 Hours/week), contract, and consulting work.</h3>
           <p class="contact-sub">Quickest reply on WhatsApp. For longer scopes, drop me an email and I'll get back within 24h.</p>
           <div class="contact-meta">
             <div class="row"><span>Email</span><a href="mailto:piolobagotao@gmail.com">piolobagotao@gmail.com</a></div>
@@ -1324,7 +1348,7 @@
         tags: ['Make', 'Polish', 'Ship'] },
       { num: '05', title: 'Refine', icon: ICONS.refine,
         desc: "Measure what landed, learn from it, improve the next batch. The loop closes here — and then opens again, sharper than before.",
-        bullets: ['Performance & feedback review', 'Tweaks & iteration', 'A documented system'],
+        bullets: ['Performance & feedback review', 'Find opportunities for automation', 'A documented system'],
         outcome: "A clear performance report plus a written playbook of what works — so the next round is faster, better, and compounds on the last one.",
         tags: ['Measure', 'Iterate', 'Playbook'] },
     ];
@@ -1633,7 +1657,8 @@
   // ===== Design carousel (manual + swipe, looping) =====
   (function buildDesign() {
     const track = document.getElementById('designTrack');
-    for (let i = 1; i <= 6; i++) {
+    const order = [1, 3, 4, 5, 6, 2]; // design-2 goes last
+    order.forEach((i) => {
       const cell = document.createElement('div');
       cell.className = 'd-cell';
       cell.dataset.idx = String(i);
@@ -1652,7 +1677,7 @@
       };
       probe.onerror = () => {};
       probe.src = src;
-    }
+    });
 
     // Click → lightbox (swipes don't fire click on touch when there's movement)
     let downX = null, downY = null, moved = false;
@@ -1702,14 +1727,13 @@
     if (prevBtn) prevBtn.addEventListener('click', () => nudge(-1));
   }
 
-  // ===== Automation grid =====
+  // ===== Automation carousel =====
   (function buildAutomation() {
-    const grid = document.getElementById('autoGrid');
+    const track = document.getElementById('autoTrack');
     const items = [
       { file: 'n8n-1.png', name: 'Keyword research pipeline', tool: 'n8n' },
       { file: 'n8n-2.png', name: 'Content scoring', tool: 'n8n' },
       { file: 'n8n-3.png', name: 'Auto-publishing flow', tool: 'n8n' },
-      { file: 'n8n-4.png', name: 'Reporting digest', tool: 'n8n' },
     ];
     items.forEach(item => {
       const card = document.createElement('div');
@@ -1717,7 +1741,7 @@
       card.innerHTML = `
         <div class="auto-img"><div class="ph"><div class="plus">+</div><div class="lbl">Workflow</div></div></div>
       `;
-      grid.appendChild(card);
+      track.appendChild(card);
       const imgWrap = card.querySelector('.auto-img');
       const probe = new Image();
       probe.onload = () => {
@@ -1731,6 +1755,12 @@
       probe.onerror = () => {};
       probe.src = `images/automation/${item.file}`;
     });
+
+    setupCarousel(
+      track,
+      document.getElementById('autoPrev'),
+      document.getElementById('autoNext')
+    );
   })();
 
   // ===== Brand marquee =====
@@ -1807,53 +1837,4 @@
       for (let i = 0; i < half; i++) {
         const c = track.children[i];
         const r = c.getBoundingClientRect();
-        const mr = parseFloat(getComputedStyle(c).marginRight) || 0;
-        w += r.width + mr;
-      }
-      return w;
-    }
-
-    function frame(t) {
-      if (lastT === null) lastT = t;
-      const dt = (t - lastT) / 1000;
-      lastT = t;
-
-      if (jogTarget !== null) {
-        const elapsed = t - jogStartTime;
-        const p = Math.min(1, elapsed / jogDur);
-        const eased = 1 - Math.pow(1 - p, 3);
-        offset = jogStart + (jogTarget - jogStart) * eased;
-        if (p >= 1) jogTarget = null;
-      } else if (!paused) {
-        offset += speed * dt;
-      }
-
-      const halfW = halfWidth();
-      if (halfW > 0) {
-        while (offset >= halfW) offset -= halfW;
-        while (offset < 0) offset += halfW;
-      }
-
-      track.style.transform = `translate3d(-${offset.toFixed(1)}px, 0, 0)`;
-      requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-
-    const parent = track.parentElement;
-    parent.addEventListener('mouseenter', () => { paused = true; });
-    parent.addEventListener('mouseleave', () => { paused = false; lastT = null; });
-
-    return {
-      next: () => {
-        const first = original[0];
-        const step = first.getBoundingClientRect().width + (parseFloat(getComputedStyle(first).marginRight) || 0);
-        jogStart = offset;
-        jogTarget = offset + step;
-        jogStartTime = performance.now();
-      }
-    };
-  }
-</script>
-
-</body>
-</html>
+        const mr = parseFloat(getComputedStyle(c).marg
