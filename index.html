@@ -1837,4 +1837,53 @@
       for (let i = 0; i < half; i++) {
         const c = track.children[i];
         const r = c.getBoundingClientRect();
-        const mr = parseFloat(getComputedStyle(c).marg
+        const mr = parseFloat(getComputedStyle(c).marginRight) || 0;
+        w += r.width + mr;
+      }
+      return w;
+    }
+
+    function frame(t) {
+      if (lastT === null) lastT = t;
+      const dt = (t - lastT) / 1000;
+      lastT = t;
+
+      if (jogTarget !== null) {
+        const elapsed = t - jogStartTime;
+        const p = Math.min(1, elapsed / jogDur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        offset = jogStart + (jogTarget - jogStart) * eased;
+        if (p >= 1) jogTarget = null;
+      } else if (!paused) {
+        offset += speed * dt;
+      }
+
+      const halfW = halfWidth();
+      if (halfW > 0) {
+        while (offset >= halfW) offset -= halfW;
+        while (offset < 0) offset += halfW;
+      }
+
+      track.style.transform = `translate3d(-${offset.toFixed(1)}px, 0, 0)`;
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+
+    const parent = track.parentElement;
+    parent.addEventListener('mouseenter', () => { paused = true; });
+    parent.addEventListener('mouseleave', () => { paused = false; lastT = null; });
+
+    return {
+      next: () => {
+        const first = original[0];
+        const step = first.getBoundingClientRect().width + (parseFloat(getComputedStyle(first).marginRight) || 0);
+        jogStart = offset;
+        jogTarget = offset + step;
+        jogStartTime = performance.now();
+      }
+    };
+  }
+</script>
+
+</body>
+</html>
