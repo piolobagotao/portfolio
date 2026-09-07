@@ -891,40 +891,16 @@
   }
 
 
-  /* A simpler editorial layout */
-  body::before, .cursor-glow, .progress, .brand .b-dot, .portrait-badge, .eyebrow::before { display: none; }
-  .reveal, .stagger > *, .letters .ltr { opacity: 1; transform: none; transition: none; }
-  .img-reveal::after { display: none; }
-  .img-reveal img, .img-reveal .ph { transform: none; }
-  .live, .brand .b-dot, .infty { animation: none !important; box-shadow: none !important; }
-  .hero { padding: 76px 0 64px; }
+  /* Typography and spacing refinements; keep the original motion. */
   .hero-name { font-size: clamp(54px, 7.5vw, 98px); line-height: 1.04; }
-  .hero-tag { font-size: 18px; line-height: 1.7; }
   .hero-tag b { display: block; margin-bottom: 8px; font-weight: 600; }
-  .portrait-wrap, .portrait-wrap:hover { transform: none; border-radius: 6px; }
-  .portrait-wrap::after { display: none; }
-  section { padding: 72px 0; }
-  .section-title { font-size: clamp(30px, 4vw, 42px); line-height: 1.18; letter-spacing: -0.025em; }
-  .section-title .it, .section-title .it.dim { font-family: var(--sans); font-size: inherit; font-style: normal; font-weight: inherit; color: inherit; letter-spacing: inherit; padding: 0; }
-  .eyebrow { color: var(--ink-muted); font-size: 11px; letter-spacing: 0.08em; }
-  .section-head { margin-bottom: 36px; }
+  .section-title { font-size: clamp(30px, 4vw, 42px); line-height: 1.18; }
+  .section-title .it, .section-title .it.dim { font-family: var(--sans); font-style: normal; font-weight: inherit; color: inherit; letter-spacing: inherit; padding: 0; }
   .about-pull { font-family: var(--sans); font-style: normal; font-size: 18px; line-height: 1.7; padding: 0; border: 0; color: var(--ink-soft); }
-  .about-meta { margin-top: 24px; }
-  .btn, .pill { border-radius: 6px; }
-  .btn, .action, .write-card, .stat, .result, .auto-card, .edu-block, .b-card, .chip, .dc-track > .d-cell { transition: border-color .2s ease, color .2s ease; }
-  .btn:hover, .action:hover, .write-card:hover, .stat:hover, .result:hover, .auto-card:hover, .edu-block:hover, .b-card:hover, .chip:hover, .dc-track > .d-cell:hover { transform: none; box-shadow: none; }
-  .btn::before, .stat::before, .chip::before, .write-card::after, .action::after, .contact-card::before, .edu-block::before, .exp-row::before { display: none; }
-  .stat, .result, .auto-card, .write-card, .edu-block, .contact-card, .action, .b-card, .dc-track > .d-cell { border-radius: 6px; box-shadow: none; }
-  .stat { transform: none; padding: 24px; }
-  .stat-num { font-size: clamp(40px, 4vw, 56px); }
-  .stat-num .sup { font-family: var(--sans); font-size: .5em; font-style: normal; vertical-align: baseline; color: var(--ink-soft); }
-  .stat-tag::before { display: none; }
   .result-img { aspect-ratio: 16 / 9; background: #f3f5f8; }
   .result-img img { object-fit: contain; }
-  .result:hover .result-img img, .d-cell:hover img, .auto-card:hover .auto-img img { transform: none; }
-  .exp-row:hover { padding-left: 0; }
-  .chip { padding: 7px 11px; border-radius: 4px; background: transparent; }
-  .chip .dot { display: none; }
+  .stat-num { font-size: clamp(40px, 4vw, 56px); }
+  .stat-num .sup { font-family: var(--sans); font-size: .5em; font-style: normal; vertical-align: baseline; }
   .work-method { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; }
   .method-list { list-style: none; }
   .method-list li { border-bottom: 1px solid var(--border); padding: 22px 0; }
@@ -932,26 +908,10 @@
   .method-list li:last-child { border-bottom: 0; }
   .method-list h3 { font-size: 18px; line-height: 1.4; margin-bottom: 8px; font-weight: 600; letter-spacing: -0.01em; }
   .method-list p { color: var(--ink-soft); font-size: 15px; line-height: 1.7; }
-  .marquee { overflow: visible; }
-  .marquee::before, .marquee::after { display: none; }
-  .marquee-track { animation: none; transform: none; will-change: auto; display: flex; flex-wrap: wrap; gap: 12px; }
-  .brand-track > .b-cell { width: auto; padding: 0; min-height: 0; }
-  .b-card { background: transparent; padding: 16px 24px; }
-  .b-card img { max-height: 32px; max-width: 110px; }
-  .b-fallback { font-size: 15px; font-weight: 500; }
-  .dc-viewport::before, .dc-viewport::after { display: none; }
-  .contact-card { background: transparent; padding: 40px; }
   .contact-h { font-size: 30px; }
-  .foot-brand { font-size: 24px; }
   @media (max-width: 880px) { .work-method { grid-template-columns: 1fr; gap: 8px; } }
   @media (max-width: 720px) {
-    section { padding: 52px 0; }
-    .hero { padding: 32px 0 48px; }
     .hero-name { font-size: clamp(46px, 11vw, 68px); }
-    .hero-tag { font-size: 16px; }
-    .portrait-wrap { border-radius: 6px; }
-    .contact-card { padding: 26px 20px; }
-    .contact-h { font-size: 28px; }
     .nav-right > .pill { font-size: 11px; padding-left: 9px; padding-right: 9px; }
     .brand { font-size: 15px; }
   }
@@ -994,8 +954,8 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <h1 class="hero-name">Piolo <span class="it">Bagotao.</span></h1>
-        <p class="hero-tag reveal"><b>I’m a content writer who also works on SEO.</b> I write articles, plan topics, and help keep website content up to date. When a team needs help with the work around the writing, I handle that too.</p>
+        <h1 class="hero-name reveal">Piolo <span class="it">Bagotao.</span></h1>
+        <p class="hero-tag reveal"><b>I’m a content writer and SEO specialist with 3+ years of experience.</b> I plan topic clusters, write and edit articles, and publish in WordPress. I also work with GHL for marketing workflows and Claude for research and drafting support. Beyond writing, I handle technical SEO, manage content teams, and build automations with n8n and Google Sheets.</p>
         <div class="cta-row reveal">
           <a class="btn primary magnetic" href="#contact">
             Get in touch
@@ -1035,9 +995,9 @@
       <h2 class="section-title reveal">A little <span class="it">about me.</span></h2>
     </div>
     <div class="about-grid">
-      <p class="about-text reveal">I’ve spent the past three years writing for SaaS, tool, and e-commerce businesses. My work includes researching topics, writing and editing articles, and publishing in WordPress. I also work on technical SEO and help content teams manage their day-to-day workload.</p>
+      <p class="about-text reveal">My experience spans SaaS, tools, and e-commerce, including technical explainers, product copy, scripts, and social content. I research search intent, develop article briefs, and edit for clarity and accuracy. On the SEO side, I work on schema, sitemaps, crawling, and internal links. I also manage editorial schedules, review team output, and document the publishing process.</p>
       <div class="reveal">
-        <p class="about-pull">Writing is the part I enjoy most. I’m also comfortable with the spreadsheets, publishing tasks, and small fixes that come with it.</p>
+        <p class="about-pull">Writing is my main focus, but I can take responsibility for the work around it too: briefing writers, maintaining WordPress content, reviewing performance, and setting up repeatable workflows.</p>
         <dl class="about-meta">
           <div><dt>Disciplines</dt><dd>SEO · Strategy · Ops · Automation</dd></div>
           <div><dt>Tools</dt><dd>n8n · GSC · Search Atlas · WP</dd></div>
@@ -1056,7 +1016,7 @@
       <div class="eyebrow">How I work</div>
       <h2 class="section-title">What it’s like <span class="it">working with me.</span></h2>
     </div>
-    <ol class="method-list">
+    <ol class="method-list stagger">
       <li><h3>We talk through the brief.</h3><p>I ask about your audience, the work you need, and the deadline. If something is unclear, I’d rather ask early.</p></li>
       <li><h3>I look at what you already have.</h3><p>I review the website or existing content, then note what’s worth keeping and what needs attention.</p></li>
       <li><h3>We agree on the work.</h3><p>I put together the topics, deliverables, and timing so we both know what to expect.</p></li>
@@ -1350,7 +1310,7 @@
             <span class="lab"><strong>Schedule a call</strong><small>Pick a slot on my calendar</small></span>
             <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           </a>
-          <a class="action" href="mailto:piolobagotao@gmail.com?subject=Hi%20Piolo%20%E2%80%94%20Let%27s%20Work%20Together">
+          <a class="action" href="mailto:piolobagotao@gmail.com?subject=Hi%20Piolo%20%3A%20Let%27s%20Work%20Together">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
             <span class="lab"><strong>Email me</strong><small>Send me the details</small></span>
             <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
@@ -1472,6 +1432,110 @@
     if (!_ticking) { requestAnimationFrame(() => { onScroll(); _ticking = false; }); _ticking = true; }
   }, { passive: true });
   onScroll();
+
+  // ===== Cursor glow =====
+  (function attachCursorGlow() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    document.body.appendChild(glow);
+    let raf = null, hideTimer = null;
+    window.addEventListener('mousemove', (e) => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        glow.style.setProperty('--cx', e.clientX + 'px');
+        glow.style.setProperty('--cy', e.clientY + 'px');
+        glow.classList.add('active');
+        if (hideTimer) clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => glow.classList.remove('active'), 1800);
+      });
+    }, { passive: true });
+    document.addEventListener('mouseleave', () => glow.classList.remove('active'));
+  })();
+
+  // ===== Magnetic buttons =====
+  (function attachMagnetic() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+    document.querySelectorAll('.btn.magnetic').forEach(btn => {
+      let raf = null;
+      btn.addEventListener('mousemove', (e) => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const r = btn.getBoundingClientRect();
+          const x = (e.clientX - r.left - r.width / 2) * 0.25;
+          const y = (e.clientY - r.top - r.height / 2) * 0.35;
+          btn.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+        });
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  })();
+
+  // ===== Magnetic 3D tilt on cards =====
+  (function attachTilt() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+    document.querySelectorAll('.stat, .skill-card').forEach(card => {
+      let raf = null;
+      card.addEventListener('mouseenter', () => card.classList.add('hovering'));
+      card.addEventListener('mousemove', (e) => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          const rx = (0.5 - y) * 8;
+          const ry = (x - 0.5) * 10;
+          card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+          card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+          card.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
+          card.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('hovering');
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
+  })();
+
+  // ===== Count-up stats =====
+  function countUp(textNode, target, duration, decimals) {
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      textNode.nodeValue = (target * eased).toFixed(decimals);
+      if (t < 1) requestAnimationFrame(tick);
+      else textNode.nodeValue = target.toFixed(decimals);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statsIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { statsIO.unobserve(entry.target); return; }
+      entry.target.querySelectorAll('.stat-num').forEach((numEl, i) => {
+        let txt = null;
+        for (const n of numEl.childNodes) { if (n.nodeType === 3 && n.nodeValue.trim()) { txt = n; break; } }
+        if (!txt) return;
+        const rawNumber = txt.nodeValue.trim();
+        const decimals = (rawNumber.split('.')[1] || '').length;
+        const target = parseFloat(rawNumber.replace(/,/g, ''));
+        if (!isFinite(target)) return;
+        txt.nodeValue = '0';
+        setTimeout(() => countUp(txt, target, 1400 + i * 80, decimals), 220 + i * 130);
+      });
+      statsIO.unobserve(entry.target);
+    });
+  }, { threshold: 0.25 });
+  const sg = document.getElementById('statsGrid');
+  if (sg) statsIO.observe(sg);
 
   // ===== Lightbox =====
   const lb = document.getElementById('lightbox');
@@ -1710,7 +1774,7 @@
       probe.onerror = () => {};
       probe.src = `images/brands/${b.logo}`;
     });
-    // Keep client names still and easy to read.
+    setupInfiniteScroll(track, 7, 4);
   })();
 
   // ===== Infinite scroll engine =====
