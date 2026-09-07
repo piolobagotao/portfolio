@@ -470,7 +470,8 @@
     .flow-bullets { grid-template-columns: 1fr; gap: 8px; }
   }
 
-  /* ============ SKILLS — category + chips ============ */
+  /* Legacy process layout */
+  .flow {
     position: relative;
     display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
     padding: 24px 0 8px;
@@ -826,9 +827,72 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal, .stagger > *, .letters .ltr, .img-reveal::after, .img-reveal img, .img-reveal .ph { transition: none !important; opacity: 1 !important; transform: none !important; }
   }
+
+  /* Readability, focus, and responsive refinements */
+  :root { --ink-muted: #92929c; }
+  [data-theme="light"] { --ink-muted: #57575e; }
+  section[id], main[id] { scroll-margin-top: 110px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+  .skip-link { position: fixed; top: 12px; left: 16px; z-index: 2000; padding: 12px 18px; border-radius: 8px; background: var(--ink); color: var(--bg); transform: translateY(-180%); }
+  .skip-link:focus { transform: translateY(0); }
+  .hero-grid > *, .proc-grid > *, .flow-panel > *, .contact-grid > * { min-width: 0; }
+  .hero-tag { max-width: 600px; }
+  .hero-meta { max-width: 600px; }
+  .stat-word { font-size: clamp(28px, 3vw, 40px); line-height: 1.08; letter-spacing: -0.035em; color: var(--accent); }
+  .flow-panel { grid-template-columns: 96px minmax(0, 1fr); gap: 28px; min-height: 430px; padding: 28px; }
+  .flow-panel-num { font-size: 80px; }
+  .flow-bullets { grid-template-columns: 1fr; gap: 8px; }
+  .flow-bullet { padding: 10px 12px; }
+  .flow-progress { display: none; }
+  .contact-meta .row { flex-wrap: wrap; gap: 4px 12px; }
+  .contact-meta a { overflow-wrap: anywhere; }
+  .marquee:focus-within .marquee-track { animation-play-state: paused; }
+  @media (max-width: 980px) {
+    .flow-panel { grid-template-columns: 1fr; min-height: 0; }
+    .hero-grid { grid-template-columns: minmax(0, 1fr) 180px; gap: 32px; }
+    .hero-name { font-size: clamp(54px, 8vw, 86px); }
+  }
+  @media (max-width: 860px) {
+    nav.top .wrap { flex-wrap: wrap; gap: 12px; }
+    .nav-right { flex-wrap: wrap; flex: 1 1 auto; justify-content: flex-end; }
+    .nav-links { display: flex; order: 3; flex-basis: 100%; overflow-x: auto; padding: 2px 0 6px; }
+    .nav-link { white-space: nowrap; padding: 10px 12px; }
+    .theme-btn { width: 40px; height: 40px; }
+  }
+  @media (max-width: 720px) {
+    nav.top .wrap { display: block; position: relative; padding-top: 18px; padding-bottom: 8px; }
+    nav.top.scrolled .wrap { padding-top: 14px; padding-bottom: 6px; }
+    .nav-right { display: block; }
+    .nav-right > .pill { position: absolute; top: 13px; right: 66px; }
+    .nav-right > .theme-btn { position: absolute; top: 9px; right: 20px; }
+    .nav-links { margin-top: 12px; }
+    .nav-link { font-size: 12px; padding: 9px 10px; }
+    .hero { padding-top: 36px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+    .portrait-wrap { grid-row: 1; width: 96px; margin-top: 0; }
+    .hero-name { font-size: clamp(48px, 12vw, 72px); line-height: 1; }
+    .hero-tag { max-width: 42ch; }
+    .hero-meta-row { grid-template-columns: 76px minmax(0, 1fr); gap: 12px; align-items: start; }
+    .hero-meta-val { display: block; }
+    .hero-meta-val .live { margin-right: 8px; }
+    .btn { min-height: 44px; }
+    .flow-panel { padding: 22px; }
+    .section-title { line-height: 1.12; }
+    .stat-word { font-size: 36px; }
+  }
+  @media (max-width: 360px) { .nav-right > .pill { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    html, .dc-track { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .img-reveal::after { display: none; }
+    .marquee { overflow-x: auto; }
+    .marquee-track { transform: none; }
+  }
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to content</a>
 
 <div class="progress" id="progress"></div>
 
@@ -856,7 +920,7 @@
   </div>
 </nav>
 
-<a id="top"></a>
+<main id="top" tabindex="-1">
 
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -864,7 +928,7 @@
     <div class="hero-grid">
       <div>
         <h1 class="hero-name reveal">Piolo <span class="it">Bagotao.</span></h1>
-        <p class="hero-tag reveal"><b>Content writing is my main craft.</b> I also build the systems around it — keyword strategy, technical SEO, team workflows, and smart automation — so the writing actually ranks, converts, and scales.</p>
+        <p class="hero-tag reveal"><b>Content that connects. Systems that scale.</b> I write useful content and support it with keyword strategy, technical SEO, and practical automation — helping teams reach the right audience and turn attention into action.</p>
         <div class="cta-row reveal">
           <a class="btn primary magnetic" href="#contact">
             Start a project
@@ -878,11 +942,11 @@
         <dl class="hero-meta reveal">
           <div class="hero-meta-row">
             <dt class="hero-meta-label">Status</dt>
-            <dd class="hero-meta-val"><span class="live"></span>Open for work &amp; contract work</dd>
+            <dd class="hero-meta-val"><span class="live"></span>Open to part-time, contract &amp; consulting work</dd>
           </div>
           <div class="hero-meta-row">
             <dt class="hero-meta-label">Based in</dt>
-            <dd class="hero-meta-val">Zamboanga, PH · works globally (UTC+8)</dd>
+            <dd class="hero-meta-val">Zamboanga, Philippines · working globally · UTC+8</dd>
           </div>
         </dl>
       </div>
@@ -901,12 +965,12 @@
   <div class="wrap">
     <div class="section-head">
       <div class="reveal"><div class="eyebrow">01 — About</div></div>
-      <h2 class="section-title reveal">A short <span class="it">note.</span></h2>
+      <h2 class="section-title reveal">Writing backed by <span class="it">strategy.</span></h2>
     </div>
     <div class="about-grid">
-      <p class="about-text reveal"><b>SEO specialist and content strategist with 3+ years of experience</b> across SaaS, tools, and e-commerce. I design topic cluster plans, handle technical SEO (schema, crawling, sitemaps), and build workflow automations using n8n and Google Sheets. I also manage content teams and production pipelines — so I work well both on my own and as part of a bigger team.</p>
+      <p class="about-text reveal"><b>SEO specialist and content strategist with 3+ years of experience</b> across SaaS, tools, and e-commerce. I plan topic clusters, improve technical SEO, and build automations with n8n and Google Sheets. I also manage content teams and production workflows, bringing writing, strategy, and operations together from brief to publication.</p>
       <div class="reveal">
-        <p class="about-pull">Content systems that <span class="ac">rank, convert,</span> and don't break when the team grows.</p>
+        <p class="about-pull">Content systems that <span class="ac">rank, convert,</span> and grow with your team.</p>
         <dl class="about-meta">
           <div><dt>Disciplines</dt><dd>SEO · Strategy · Ops · Automation</dd></div>
           <div><dt>Tools</dt><dd>n8n · GSC · Search Atlas · WP</dd></div>
@@ -923,8 +987,8 @@
   <div class="wrap">
     <div class="section-head">
       <div class="reveal"><div class="eyebrow">02 — Process</div></div>
-      <h2 class="section-title reveal">How I <span class="it">solve things.</span></h2>
-      <p class="section-lead reveal">A simple loop I run on every project — content writing, graphic design, social media, SEO, automation. Repeat until it's right.</p>
+      <h2 class="section-title reveal">From brief to <span class="it">better results.</span></h2>
+      <p class="section-lead reveal">A practical five-step process for content, SEO, design, and automation. Select a step to see how I work and what you receive.</p>
     </div>
     <div class="flow-wrap reveal" id="flowWrap">
       <div class="proc-grid">
@@ -985,7 +1049,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="reveal"><div class="eyebrow">03 — By the numbers · 2023 — 2026</div></div>
-      <h2 class="section-title reveal">Three years of <span class="it">shipped</span> <span class="ac">/</span> <span class="it">measured</span> <span class="ac">/</span> <span class="it">compounded.</span></h2>
+      <h2 class="section-title reveal">Work in <span class="it">numbers.</span></h2>
     </div>
     <div class="stats-grid stagger" id="statsGrid">
       <div class="stat">
@@ -999,14 +1063,14 @@
         <div class="stat-label">Compounded organic growth across client sites.</div>
       </div>
       <div class="stat">
-        <div class="stat-tag">Articles shipped</div>
+        <div class="stat-tag">Content pieces delivered</div>
         <div class="stat-num">1000<span class="sup">+</span></div>
         <div class="stat-label">Articles, scripts, product copy, social media captions, and carousel briefs.</div>
       </div>
       <div class="stat">
-        <div class="stat-tag">Hours saved</div>
-        <div class="stat-num stat-infinite"><span class="infty">∞</span></div>
-        <div class="stat-label">From smart automations that run while I sleep.</div>
+        <div class="stat-tag">Workflow automation</div>
+        <div class="stat-num stat-word">Less busywork</div>
+        <div class="stat-label">Automated research, content scoring, and publishing workflows.</div>
       </div>
     </div>
   </div>
@@ -1017,8 +1081,8 @@
   <div class="wrap">
     <div class="section-head">
       <div class="reveal"><div class="eyebrow">04 — Stats &amp; Results</div></div>
-      <h2 class="section-title reveal">Receipts, <span class="it">not just</span> claims.</h2>
-      <p class="section-lead reveal">A lot of strategists say they know SEO. Here's what mine actually did — straight from Google Search Console.</p>
+      <h2 class="section-title reveal">Selected <span class="it">SEO results.</span></h2>
+      <p class="section-lead reveal">A look at organic performance across client projects, captured in Google Search Console and Semrush. Select an image to explore the details.</p>
     </div>
     <div class="results-grid stagger" id="resultsGrid"></div>
   </div>
@@ -1029,7 +1093,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="reveal"><div class="eyebrow">05 — Experience</div></div>
-      <h2 class="section-title reveal">Where I've <span class="it">shipped.</span></h2>
+      <h2 class="section-title reveal">Where I've <span class="it">worked.</span></h2>
     </div>
     <div class="exp-list stagger">
       <div class="exp-row">
@@ -1071,7 +1135,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="reveal"><div class="eyebrow">06 — Skills</div></div>
-      <h2 class="section-title reveal">Tools &amp; <span class="it">things I do.</span></h2>
+      <h2 class="section-title reveal">Skills &amp; <span class="it">tools.</span></h2>
     </div>
     <div class="skills-stack reveal">
       <div class="skill-row">
@@ -1107,7 +1171,7 @@
           <span class="chip"><span class="dot"></span>n8n</span>
           <span class="chip"><span class="dot"></span>GHL (Marketing &amp; Funnels)</span>
           <span class="chip"><span class="dot"></span>Google Sheets</span>
-          <span class="chip"><span class="dot"></span>AppScript</span>
+          <span class="chip"><span class="dot"></span>Google Apps Script</span>
           <span class="chip"><span class="dot"></span>Claude AI</span>
           <span class="chip"><span class="dot"></span>Descript</span>
           <span class="chip"><span class="dot"></span>Zoho CRM</span>
@@ -1172,7 +1236,7 @@
     <div class="section-head">
       <div class="reveal"><div class="eyebrow">08 — Visuals</div></div>
       <h2 class="section-title reveal">Graphic <span class="it">design.</span></h2>
-      <p class="section-lead reveal">A few visuals I've put together for thumbnails, post graphics, and marketing collateral.</p>
+      <p class="section-lead reveal">Selected thumbnails, social graphics, and marketing materials. Browse the gallery and select a design for a closer look.</p>
     </div>
     <div class="reveal design-carousel">
       <button class="dc-btn dc-prev" id="designPrev" type="button" aria-label="Previous design">
@@ -1250,8 +1314,8 @@
     <div class="contact-card reveal">
       <div class="contact-grid">
         <div>
-          <h3 class="contact-h">Open to <span class="it">part-time</span> (30 Hours/week), contract, and consulting work.</h3>
-          <p class="contact-sub">Quickest reply on WhatsApp. For longer scopes, drop me an email and I'll get back within 24h.</p>
+          <h3 class="contact-h">Open to <span class="it">part-time</span> (30 hours/week), contract, and consulting work.</h3>
+          <p class="contact-sub">Have a project in mind? Share your goals, scope, and timeline. WhatsApp is the quickest way to reach me; for detailed briefs, email me and I'll reply within 24 hours.</p>
           <div class="contact-meta">
             <div class="row"><span>Email</span><a href="mailto:piolobagotao@gmail.com">piolobagotao@gmail.com</a></div>
             <div class="row"><span>WhatsApp</span><a href="https://api.whatsapp.com/send?phone=639666856413" target="_blank" rel="noopener">+63 966 685 6413</a></div>
@@ -1261,7 +1325,7 @@
         <div class="actions">
           <a class="action" href="https://calendly.com/piolobagotao" target="_blank" rel="noopener">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-            <span class="lab"><strong>Set a meeting</strong><small>Pick a slot on my calendar</small></span>
+            <span class="lab"><strong>Book a conversation</strong><small>Pick a slot on my calendar</small></span>
             <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           </a>
           <a class="action" href="mailto:piolobagotao@gmail.com?subject=Hi%20Piolo%20%E2%80%94%20Let%27s%20Work%20Together">
@@ -1279,6 +1343,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
@@ -1307,7 +1373,7 @@
 </footer>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
   <button class="lb-close" id="lbClose" aria-label="Close">×</button>
   <img id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" />
 </div>
@@ -1376,7 +1442,11 @@
     function setActive(i, fromUser) {
       if (i === active) return;
       active = i;
-      stepBtns.forEach((b, idx) => b.classList.toggle('active', idx === i));
+      stepBtns.forEach((b, idx) => {
+        b.classList.toggle('active', idx === i);
+        b.setAttribute('aria-pressed', String(idx === i));
+        b.setAttribute('aria-controls', 'flowPanel');
+      });
       panel.classList.add('swapping');
       setTimeout(() => {
         const s = steps[i];
@@ -1390,28 +1460,18 @@
         panel.classList.remove('swapping');
       }, 240);
       if (fromUser && auto) { clearInterval(auto); auto = null; renderProgress(false); }
-      else renderProgress(true);
+      else renderProgress(false);
     }
 
     stepBtns.forEach((b, i) => {
       b.addEventListener('click', () => setActive(i, true));
-      b.addEventListener('mouseenter', () => setActive(i, true));
+
     });
 
     // initial render (without animating from -1)
     setActive(0, false);
 
-    const flowWrap = document.getElementById('flowWrap');
-    const startAuto = () => {
-      if (auto) return;
-      renderProgress(true);
-      auto = setInterval(() => { setActive((active + 1) % steps.length, false); }, 3200);
-    };
-    const stopAuto = () => { if (auto) { clearInterval(auto); auto = null; } renderProgress(false); };
-    const flowIO = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) startAuto(); else stopAuto(); });
-    }, { threshold: 0.3 });
-    if (flowWrap) flowIO.observe(flowWrap);
+    // Steps remain visible until the visitor chooses another.
   })();
 
   // ===== Theme =====
@@ -1570,6 +1630,7 @@
   const statsIO = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { statsIO.unobserve(entry.target); return; }
       entry.target.querySelectorAll('.stat-num').forEach((numEl, i) => {
         let txt = null;
         for (const n of numEl.childNodes) { if (n.nodeType === 3 && n.nodeValue.trim()) { txt = n; break; } }
@@ -1588,18 +1649,37 @@
   // ===== Lightbox =====
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
+  let lightboxTrigger = null;
   function openLightbox(src, alt) {
+    lightboxTrigger = document.activeElement;
     lbImg.src = src; lbImg.alt = alt || '';
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
+    document.getElementById('lbClose').focus();
   }
   function closeLightbox() {
+    if (!lb.classList.contains('open')) return;
     lb.classList.remove('open');
     document.body.style.overflow = '';
+    if (lightboxTrigger) lightboxTrigger.focus();
   }
   lb.addEventListener('click', e => { if (e.target === lb || e.target.id === 'lbClose') closeLightbox(); });
   document.getElementById('lbClose').addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Tab') { e.preventDefault(); document.getElementById('lbClose').focus(); }
+  });
+  function makeImageTrigger(element, label) {
+    element.tabIndex = 0;
+    element.setAttribute('role', 'button');
+    element.setAttribute('aria-label', 'View ' + label);
+    element.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault(); element.click();
+      }
+    });
+  }
 
   // ===== Hero portrait probe =====
   (function loadPortrait() {
@@ -1647,6 +1727,7 @@
         const im = document.createElement('img');
         im.src = probe.src; im.alt = item.name;
         imgWrap.appendChild(im);
+        makeImageTrigger(card, item.name);
         card.addEventListener('click', () => openLightbox(probe.src, item.name));
       };
       probe.onerror = () => {};
@@ -1674,6 +1755,8 @@
         im.src = src; im.alt = fname;
         cell.appendChild(im);
         cell.dataset.src = src;
+        im.alt = 'Graphic design sample ' + i;
+        makeImageTrigger(cell, im.alt);
       };
       probe.onerror = () => {};
       probe.src = src;
@@ -1721,7 +1804,7 @@
       } else {
         target = Math.max(0, Math.min(max, track.scrollLeft + s * dir));
       }
-      track.scrollTo({ left: target, behavior: 'smooth' });
+      track.scrollTo({ left: target, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     }
     if (nextBtn) nextBtn.addEventListener('click', () => nudge(1));
     if (prevBtn) prevBtn.addEventListener('click', () => nudge(-1));
@@ -1740,6 +1823,7 @@
       card.className = 'auto-card';
       card.innerHTML = `
         <div class="auto-img"><div class="ph"><div class="plus">+</div><div class="lbl">Workflow</div></div></div>
+        <div class="auto-foot"><span class="name">${item.name}</span><span class="tool">${item.tool}</span></div>
       `;
       track.appendChild(card);
       const imgWrap = card.querySelector('.auto-img');
@@ -1750,6 +1834,7 @@
         const im = document.createElement('img');
         im.src = probe.src; im.alt = item.name;
         imgWrap.appendChild(im);
+        makeImageTrigger(imgWrap, item.name);
         imgWrap.addEventListener('click', () => openLightbox(probe.src, item.name));
       };
       probe.onerror = () => {};
