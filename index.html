@@ -901,15 +901,29 @@
   .result-img img { object-fit: contain; }
   .stat-num { font-size: clamp(40px, 4vw, 56px); }
   .stat-num .sup { font-family: var(--sans); font-size: .5em; font-style: normal; vertical-align: baseline; }
-  .work-method { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; }
-  .method-list { list-style: none; }
-  .method-list li { border-bottom: 1px solid var(--border); padding: 22px 0; }
-  .method-list li:first-child { padding-top: 0; }
-  .method-list li:last-child { border-bottom: 0; }
-  .method-list h3 { font-size: 18px; line-height: 1.4; margin-bottom: 8px; font-weight: 600; letter-spacing: -0.01em; }
-  .method-list p { color: var(--ink-soft); font-size: 15px; line-height: 1.7; }
+  .work-method { display: block; }
+  .method-list { list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; align-items: start; }
+  .method-list li { grid-column: span 2; }
+  .method-list li:nth-last-child(-n+2) { grid-column: span 3; }
+  .method-card { border: 1px solid var(--border); border-radius: 16px; background: var(--bg-card); overflow: hidden; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+  .method-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 28px -16px var(--accent-glow); }
+  .method-card[open] { border-color: var(--accent); }
+  .method-card summary { padding: 24px; cursor: pointer; list-style: none; }
+  .method-card summary::-webkit-details-marker { display: none; }
+  .method-card summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -5px; border-radius: 16px; }
+  .method-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+  .method-number { font-size: 13px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .method-toggle { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--border-strong); border-radius: 50%; color: var(--ink-soft); font-size: 20px; line-height: 1; transition: transform .25s ease, background .25s ease; }
+  .method-card[open] .method-toggle { transform: rotate(45deg); background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  .method-list h3 { font-size: 19px; line-height: 1.35; margin: 0 0 10px; font-weight: 600; letter-spacing: -0.02em; }
+  .method-topic { display: block; color: var(--ink-soft); font-size: 13px; line-height: 1.5; }
+  .method-detail { padding: 0 24px 24px; }
+  .method-detail p { border-top: 1px solid var(--border); padding-top: 18px; color: var(--ink-soft); font-size: 15px; line-height: 1.7; }
+  .method-card[open] .method-detail { animation: methodOpen .3s ease both; }
+  @keyframes methodOpen { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 700px) { .method-list { grid-template-columns: 1fr; } .method-list li, .method-list li:nth-last-child(-n+2) { grid-column: auto; } .method-card summary { padding: 20px; } .method-card-top { margin-bottom: 16px; } .method-detail { padding: 0 20px 20px; } }
+  @media (prefers-reduced-motion: reduce) { .method-card, .method-toggle { transition: none; } .method-card:hover { transform: none; } .method-card[open] .method-detail { animation: none; } }
   .contact-h { font-size: 30px; }
-  @media (max-width: 880px) { .work-method { grid-template-columns: 1fr; gap: 8px; } }
   @media (max-width: 720px) {
     .hero-name { font-size: clamp(46px, 11vw, 68px); }
     .nav-right > .pill { font-size: 11px; padding-left: 9px; padding-right: 9px; }
@@ -1012,16 +1026,17 @@
 <!-- ============ PROCESS ============ -->
 <section id="process" class="bordered">
   <div class="wrap work-method">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">How I work</div>
       <h2 class="section-title">What it’s like <span class="it">working with me.</span></h2>
+      <p class="section-lead">Click a card to see how I handle each part of the work.</p>
     </div>
     <ol class="method-list stagger">
-      <li><h3>We talk through the brief.</h3><p>I ask about your audience, the work you need, and the deadline. If something is unclear, I’d rather ask early.</p></li>
-      <li><h3>I look at what you already have.</h3><p>I review the website or existing content, then note what’s worth keeping and what needs attention.</p></li>
-      <li><h3>We agree on the work.</h3><p>I put together the topics, deliverables, and timing so we both know what to expect.</p></li>
-      <li><h3>I write and send it over.</h3><p>You get a draft to review. I make revisions and can handle the publishing if you need me to.</p></li>
-      <li><h3>I check how it’s doing.</h3><p>For ongoing work, I review the results and use what we learn to plan the next round.</p></li>
+      <li><details class="method-card" open><summary><span class="method-card-top"><span class="method-number">01</span><span class="method-toggle" aria-hidden="true">+</span></span><h3>We talk through the brief.</h3><span class="method-topic">Audience, scope and deadlines</span></summary><div class="method-detail"><p>I ask about your audience, the work you need, and the deadline. If something is unclear, I’d rather ask early.</p></div></details></li>
+      <li><details class="method-card"><summary><span class="method-card-top"><span class="method-number">02</span><span class="method-toggle" aria-hidden="true">+</span></span><h3>I look at what you already have.</h3><span class="method-topic">Website and content review</span></summary><div class="method-detail"><p>I review the website or existing content, then note what’s worth keeping and what needs attention.</p></div></details></li>
+      <li><details class="method-card"><summary><span class="method-card-top"><span class="method-number">03</span><span class="method-toggle" aria-hidden="true">+</span></span><h3>We agree on the work.</h3><span class="method-topic">Topics, deliverables and timing</span></summary><div class="method-detail"><p>I put together the topics, deliverables, and timing so we both know what to expect.</p></div></details></li>
+      <li><details class="method-card"><summary><span class="method-card-top"><span class="method-number">04</span><span class="method-toggle" aria-hidden="true">+</span></span><h3>I write and send it over.</h3><span class="method-topic">Drafts, revisions and publishing</span></summary><div class="method-detail"><p>You get a draft to review. I make revisions and can handle the publishing if you need me to.</p></div></details></li>
+      <li><details class="method-card"><summary><span class="method-card-top"><span class="method-number">05</span><span class="method-toggle" aria-hidden="true">+</span></span><h3>I check how it’s doing.</h3><span class="method-topic">Results and the next round of work</span></summary><div class="method-detail"><p>For ongoing work, I review the results and use what we learn to plan the next round.</p></div></details></li>
     </ol>
   </div>
 </section>
