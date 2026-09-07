@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Piolo Bagotao — SEO Specialist · Content Strategist · Operations</title>
-<meta name="description" content="Piolo Bagotao — SEO Specialist, Content Strategist, and Operations Lead. I build content systems that rank, convert, and scale." />
+<title>Piolo Bagotao | Content Writer &amp; SEO Specialist</title>
+<meta name="description" content="Content writer and SEO specialist based in Zamboanga, Philippines. Browse my writing, client results, and work experience." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -584,7 +584,7 @@
   .write-arrow svg { width: 12px; height: 12px; transition: transform 0.3s var(--ease-expo); }
   .write-card:hover .write-arrow svg { transform: translate(2px, -2px); }
 
-  /* ============ MARQUEE (brands only — auto-scrolling) ============ */
+  /* ============ MARQUEE (brands only – auto-scrolling) ============ */
   .marquee { position: relative; overflow: hidden; }
   .marquee-track { display: flex; will-change: transform; animation: marqueeRoll var(--marquee-dur, 40s) linear infinite; }
   .marquee:hover .marquee-track { animation-play-state: paused; }
@@ -890,6 +890,72 @@
     .marquee-track { transform: none; }
   }
 
+
+  /* A simpler editorial layout */
+  body::before, .cursor-glow, .progress, .brand .b-dot, .portrait-badge, .eyebrow::before { display: none; }
+  .reveal, .stagger > *, .letters .ltr { opacity: 1; transform: none; transition: none; }
+  .img-reveal::after { display: none; }
+  .img-reveal img, .img-reveal .ph { transform: none; }
+  .live, .brand .b-dot, .infty { animation: none !important; box-shadow: none !important; }
+  .hero { padding: 76px 0 64px; }
+  .hero-name { font-size: clamp(54px, 7.5vw, 98px); line-height: 1.04; }
+  .hero-tag { font-size: 18px; line-height: 1.7; }
+  .hero-tag b { display: block; margin-bottom: 8px; font-weight: 600; }
+  .portrait-wrap, .portrait-wrap:hover { transform: none; border-radius: 6px; }
+  .portrait-wrap::after { display: none; }
+  section { padding: 72px 0; }
+  .section-title { font-size: clamp(30px, 4vw, 42px); line-height: 1.18; letter-spacing: -0.025em; }
+  .section-title .it, .section-title .it.dim { font-family: var(--sans); font-size: inherit; font-style: normal; font-weight: inherit; color: inherit; letter-spacing: inherit; padding: 0; }
+  .eyebrow { color: var(--ink-muted); font-size: 11px; letter-spacing: 0.08em; }
+  .section-head { margin-bottom: 36px; }
+  .about-pull { font-family: var(--sans); font-style: normal; font-size: 18px; line-height: 1.7; padding: 0; border: 0; color: var(--ink-soft); }
+  .about-meta { margin-top: 24px; }
+  .btn, .pill { border-radius: 6px; }
+  .btn, .action, .write-card, .stat, .result, .auto-card, .edu-block, .b-card, .chip, .dc-track > .d-cell { transition: border-color .2s ease, color .2s ease; }
+  .btn:hover, .action:hover, .write-card:hover, .stat:hover, .result:hover, .auto-card:hover, .edu-block:hover, .b-card:hover, .chip:hover, .dc-track > .d-cell:hover { transform: none; box-shadow: none; }
+  .btn::before, .stat::before, .chip::before, .write-card::after, .action::after, .contact-card::before, .edu-block::before, .exp-row::before { display: none; }
+  .stat, .result, .auto-card, .write-card, .edu-block, .contact-card, .action, .b-card, .dc-track > .d-cell { border-radius: 6px; box-shadow: none; }
+  .stat { transform: none; padding: 24px; }
+  .stat-num { font-size: clamp(40px, 4vw, 56px); }
+  .stat-num .sup { font-family: var(--sans); font-size: .5em; font-style: normal; vertical-align: baseline; color: var(--ink-soft); }
+  .stat-tag::before { display: none; }
+  .result-img { aspect-ratio: 16 / 9; background: #f3f5f8; }
+  .result-img img { object-fit: contain; }
+  .result:hover .result-img img, .d-cell:hover img, .auto-card:hover .auto-img img { transform: none; }
+  .exp-row:hover { padding-left: 0; }
+  .chip { padding: 7px 11px; border-radius: 4px; background: transparent; }
+  .chip .dot { display: none; }
+  .work-method { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; }
+  .method-list { list-style: none; }
+  .method-list li { border-bottom: 1px solid var(--border); padding: 22px 0; }
+  .method-list li:first-child { padding-top: 0; }
+  .method-list li:last-child { border-bottom: 0; }
+  .method-list h3 { font-size: 18px; line-height: 1.4; margin-bottom: 8px; font-weight: 600; letter-spacing: -0.01em; }
+  .method-list p { color: var(--ink-soft); font-size: 15px; line-height: 1.7; }
+  .marquee { overflow: visible; }
+  .marquee::before, .marquee::after { display: none; }
+  .marquee-track { animation: none; transform: none; will-change: auto; display: flex; flex-wrap: wrap; gap: 12px; }
+  .brand-track > .b-cell { width: auto; padding: 0; min-height: 0; }
+  .b-card { background: transparent; padding: 16px 24px; }
+  .b-card img { max-height: 32px; max-width: 110px; }
+  .b-fallback { font-size: 15px; font-weight: 500; }
+  .dc-viewport::before, .dc-viewport::after { display: none; }
+  .contact-card { background: transparent; padding: 40px; }
+  .contact-h { font-size: 30px; }
+  .foot-brand { font-size: 24px; }
+  @media (max-width: 880px) { .work-method { grid-template-columns: 1fr; gap: 8px; } }
+  @media (max-width: 720px) {
+    section { padding: 52px 0; }
+    .hero { padding: 32px 0 48px; }
+    .hero-name { font-size: clamp(46px, 11vw, 68px); }
+    .hero-tag { font-size: 16px; }
+    .portrait-wrap { border-radius: 6px; }
+    .contact-card { padding: 26px 20px; }
+    .contact-h { font-size: 28px; }
+    .nav-right > .pill { font-size: 11px; padding-left: 9px; padding-right: 9px; }
+    .brand { font-size: 15px; }
+  }
+
 </style>
 </head>
 <body>
@@ -912,7 +978,7 @@
         <a class="nav-link" href="#writing">Writing</a>
         <a class="nav-link" href="#contact">Contact</a>
       </div>
-      <a class="pill" href="#contact"><span class="live"></span>Open for Work</a>
+      <a class="pill" href="#contact"><span class="live"></span>Available for work</a>
       <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -928,11 +994,11 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <h1 class="hero-name reveal">Piolo <span class="it">Bagotao.</span></h1>
-        <p class="hero-tag reveal"><b>Content that connects. Systems that scale.</b> I write useful content and support it with keyword strategy, technical SEO, and practical automation — helping teams reach the right audience and turn attention into action.</p>
+        <h1 class="hero-name">Piolo <span class="it">Bagotao.</span></h1>
+        <p class="hero-tag reveal"><b>I’m a content writer who also works on SEO.</b> I write articles, plan topics, and help keep website content up to date. When a team needs help with the work around the writing, I handle that too.</p>
         <div class="cta-row reveal">
           <a class="btn primary magnetic" href="#contact">
-            Start a project
+            Get in touch
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
           </a>
           <a class="btn magnetic" href="https://canva.link/piolobagotao" target="_blank" rel="noopener">
@@ -965,13 +1031,13 @@
 <section id="about" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">01 — About</div></div>
-      <h2 class="section-title reveal">Writing backed by <span class="it">strategy.</span></h2>
+      <div class="reveal"><div class="eyebrow">About</div></div>
+      <h2 class="section-title reveal">A little <span class="it">about me.</span></h2>
     </div>
     <div class="about-grid">
-      <p class="about-text reveal"><b>SEO specialist and content strategist with 3+ years of experience</b> across SaaS, tools, and e-commerce. I plan topic clusters, improve technical SEO, and build automations with n8n and Google Sheets. I also manage content teams and production workflows, bringing writing, strategy, and operations together from brief to publication.</p>
+      <p class="about-text reveal">I’ve spent the past three years writing for SaaS, tool, and e-commerce businesses. My work includes researching topics, writing and editing articles, and publishing in WordPress. I also work on technical SEO and help content teams manage their day-to-day workload.</p>
       <div class="reveal">
-        <p class="about-pull">Content systems that <span class="ac">rank, convert,</span> and grow with your team.</p>
+        <p class="about-pull">Writing is the part I enjoy most. I’m also comfortable with the spreadsheets, publishing tasks, and small fixes that come with it.</p>
         <dl class="about-meta">
           <div><dt>Disciplines</dt><dd>SEO · Strategy · Ops · Automation</dd></div>
           <div><dt>Tools</dt><dd>n8n · GSC · Search Atlas · WP</dd></div>
@@ -985,63 +1051,18 @@
 
 <!-- ============ PROCESS ============ -->
 <section id="process" class="bordered">
-  <div class="wrap">
+  <div class="wrap work-method">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">02 — Process</div></div>
-      <h2 class="section-title reveal">From brief to <span class="it">better results.</span></h2>
-      <p class="section-lead reveal">A practical five-step process for content, SEO, design, and automation. Select a step to see how I work and what you receive.</p>
+      <div class="eyebrow">How I work</div>
+      <h2 class="section-title">What it’s like <span class="it">working with me.</span></h2>
     </div>
-    <div class="flow-wrap reveal" id="flowWrap">
-      <div class="proc-grid">
-        <div class="proc-list" id="flowRow">
-          <button class="proc-step active" data-step="0" type="button">
-            <span class="proc-num">01</span>
-            <span class="proc-name">Listen</span>
-            <span class="proc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span>
-          </button>
-          <button class="proc-step" data-step="1" type="button">
-            <span class="proc-num">02</span>
-            <span class="proc-name">Audit</span>
-            <span class="proc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span>
-          </button>
-          <button class="proc-step" data-step="2" type="button">
-            <span class="proc-num">03</span>
-            <span class="proc-name">Plan</span>
-            <span class="proc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span>
-          </button>
-          <button class="proc-step" data-step="3" type="button">
-            <span class="proc-num">04</span>
-            <span class="proc-name">Build</span>
-            <span class="proc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span>
-          </button>
-          <button class="proc-step" data-step="4" type="button">
-            <span class="proc-num">05</span>
-            <span class="proc-name">Refine</span>
-            <span class="proc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span>
-          </button>
-        </div>
-        <div class="flow-panel" id="flowPanel">
-          <div class="flow-progress" id="flowProgress"></div>
-          <div class="flow-panel-left">
-            <div class="flow-panel-num" id="flowNum">01</div>
-            <div class="flow-icon-big" id="flowIconBig"></div>
-          </div>
-          <div class="flow-panel-body" id="flowBody">
-            <h4 id="flowTitle">Listen</h4>
-            <p id="flowDesc"></p>
-            <div class="flow-bullets" id="flowBullets"></div>
-            <div class="flow-outcome" id="flowOutcome">
-              <span class="out-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <span class="out-body">
-                <span class="out-label">You get</span>
-                <span class="out-text" id="flowOutText"></span>
-              </span>
-            </div>
-            <div class="flow-tags" id="flowTags"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ol class="method-list">
+      <li><h3>We talk through the brief.</h3><p>I ask about your audience, the work you need, and the deadline. If something is unclear, I’d rather ask early.</p></li>
+      <li><h3>I look at what you already have.</h3><p>I review the website or existing content, then note what’s worth keeping and what needs attention.</p></li>
+      <li><h3>We agree on the work.</h3><p>I put together the topics, deliverables, and timing so we both know what to expect.</p></li>
+      <li><h3>I write and send it over.</h3><p>You get a draft to review. I make revisions and can handle the publishing if you need me to.</p></li>
+      <li><h3>I check how it’s doing.</h3><p>For ongoing work, I review the results and use what we learn to plan the next round.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -1049,8 +1070,8 @@
 <section id="stats" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">03 — By the numbers · 2023 — 2026</div></div>
-      <h2 class="section-title reveal">Work in <span class="it">numbers.</span></h2>
+      <div class="reveal"><div class="eyebrow">By the numbers</div></div>
+      <h2 class="section-title reveal">A few <span class="it">numbers.</span></h2>
     </div>
     <div class="stats-grid stagger" id="statsGrid">
       <div class="stat">
@@ -1059,19 +1080,19 @@
         <div class="stat-label">Across SaaS, tools, and e-commerce.</div>
       </div>
       <div class="stat">
-        <div class="stat-tag">Traffic from SEO</div>
-        <div class="stat-num">3000<span class="sup">%+</span></div>
-        <div class="stat-label">Compounded organic growth across client sites.</div>
+        <div class="stat-tag">Clicks from Google</div>
+        <div class="stat-num">48.3<span class="sup">K</span></div>
+        <div class="stat-label">Luxury watch website, six-month Search Console report.</div>
       </div>
       <div class="stat">
-        <div class="stat-tag">Content pieces delivered</div>
+        <div class="stat-tag">Published content</div>
         <div class="stat-num">1000<span class="sup">+</span></div>
         <div class="stat-label">Articles, scripts, product copy, social media captions, and carousel briefs.</div>
       </div>
       <div class="stat">
-        <div class="stat-tag">Workflow automation</div>
-        <div class="stat-num stat-word">Less busywork</div>
-        <div class="stat-label">Automated research, content scoring, and publishing workflows.</div>
+        <div class="stat-tag">Google impressions</div>
+        <div class="stat-num">4.33<span class="sup">M</span></div>
+        <div class="stat-label">The same website and six-month reporting period.</div>
       </div>
     </div>
   </div>
@@ -1081,9 +1102,9 @@
 <section id="results" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">04 — Stats &amp; Results</div></div>
-      <h2 class="section-title reveal">Selected <span class="it">SEO results.</span></h2>
-      <p class="section-lead reveal">A look at organic performance across client projects, captured in Google Search Console and Semrush. Select an image to explore the details.</p>
+      <div class="reveal"><div class="eyebrow">Stats &amp; Results</div></div>
+      <h2 class="section-title reveal">Results from <span class="it">client work.</span></h2>
+      <p class="section-lead reveal">These screenshots show search performance for sites I’ve worked on. The first covers six months, with 48.3K clicks, 4.33M impressions, and an average position of 7.4. Click any image to see the full report.</p>
     </div>
     <div class="results-grid stagger" id="resultsGrid"></div>
   </div>
@@ -1093,7 +1114,7 @@
 <section id="experience" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">05 — Experience</div></div>
+      <div class="reveal"><div class="eyebrow">Experience</div></div>
       <h2 class="section-title reveal">Where I've <span class="it">worked.</span></h2>
     </div>
     <div class="exp-list stagger">
@@ -1101,31 +1122,31 @@
         <div class="exp-idx">01</div>
         <div class="exp-role">SEO &amp; Operations Lead</div>
         <div class="exp-co">Majestix Collection<small>Luxury watch platform</small></div>
-        <div class="exp-date">Sep 2025 — Present</div>
+        <div class="exp-date">Sep 2025 – Present</div>
       </div>
       <div class="exp-row">
         <div class="exp-idx">02</div>
         <div class="exp-role">AI Media Specialist</div>
         <div class="exp-co">Content House<small>Germany · agency</small></div>
-        <div class="exp-date">Nov 2024 — Jul 2025</div>
+        <div class="exp-date">Nov 2024 – Jul 2025</div>
       </div>
       <div class="exp-row">
         <div class="exp-idx">03</div>
         <div class="exp-role">SEO Content Writer</div>
         <div class="exp-co">闻道网络 Winndoo<small>B2B SaaS · Tencent RTC</small></div>
-        <div class="exp-date">Dec 2023 — Sep 2025</div>
+        <div class="exp-date">Dec 2023 – Sep 2025</div>
       </div>
       <div class="exp-row">
         <div class="exp-idx">04</div>
         <div class="exp-role">SEO Writer &amp; WordPress Editor</div>
         <div class="exp-co">Creative Nest Global Ltd<small>Multi-brand publisher</small></div>
-        <div class="exp-date">Jun 2023 — Oct 2024</div>
+        <div class="exp-date">Jun 2023 – Oct 2024</div>
       </div>
       <div class="exp-row">
         <div class="exp-idx">05</div>
         <div class="exp-role">Administrative Assistant</div>
         <div class="exp-co">Office of the City Administrator<small>LGU Zamboanga</small></div>
-        <div class="exp-date">Feb — May 2023</div>
+        <div class="exp-date">Feb – May 2023</div>
       </div>
     </div>
   </div>
@@ -1135,7 +1156,7 @@
 <section id="skills" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">06 — Skills</div></div>
+      <div class="reveal"><div class="eyebrow">Skills</div></div>
       <h2 class="section-title reveal">Skills &amp; <span class="it">tools.</span></h2>
     </div>
     <div class="skills-stack reveal">
@@ -1208,8 +1229,8 @@
 <section id="writing" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">07 — Writing</div></div>
-      <h2 class="section-title reveal">Selected <span class="it">writing.</span></h2>
+      <div class="reveal"><div class="eyebrow">Writing</div></div>
+      <h2 class="section-title reveal">Some of <span class="it">my writing.</span></h2>
     </div>
     <div class="writing-grid stagger">
       <a class="write-card" href="https://trtc.io/blog/details/communication-protocols" target="_blank" rel="noopener">
@@ -1235,9 +1256,9 @@
 <section id="design" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">08 — Visuals</div></div>
+      <div class="reveal"><div class="eyebrow">Visuals</div></div>
       <h2 class="section-title reveal">Graphic <span class="it">design.</span></h2>
-      <p class="section-lead reveal">Selected thumbnails, social graphics, and marketing materials. Browse the gallery and select a design for a closer look.</p>
+      <p class="section-lead reveal">I also make thumbnails, social posts, and other graphics. Here are a few examples.</p>
     </div>
     <div class="reveal design-carousel">
       <button class="dc-btn dc-prev" id="designPrev" type="button" aria-label="Previous design">
@@ -1257,8 +1278,8 @@
 <section id="automation" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">09 — Automation</div></div>
-      <h2 class="section-title reveal">Workflow <span class="it">samples.</span></h2>
+      <div class="reveal"><div class="eyebrow">Automation</div></div>
+      <h2 class="section-title reveal">A few <span class="it">automations.</span></h2>
     </div>
     <div class="reveal design-carousel">
       <button class="dc-btn dc-prev" id="autoPrev" type="button" aria-label="Previous workflow">
@@ -1278,13 +1299,13 @@
 <section id="education" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">10 — Education</div></div>
+      <div class="reveal"><div class="eyebrow">Education</div></div>
       <h2 class="section-title reveal"><span class="it">Background.</span></h2>
     </div>
     <div class="edu-block reveal">
       <div class="edu-school">Western Mindanao State University</div>
-      <div class="edu-deg">Bachelor of Arts — Political Science &amp; Government</div>
-      <div class="edu-date">2019 — 2023</div>
+      <div class="edu-deg">Bachelor of Arts – Political Science &amp; Government</div>
+      <div class="edu-date">2019 – 2023</div>
     </div>
   </div>
 </section>
@@ -1293,9 +1314,9 @@
 <section id="brands" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">11 — Trusted Work</div></div>
+      <div class="reveal"><div class="eyebrow">Trusted Work</div></div>
       <h2 class="section-title reveal">Brands I've <span class="it">written for.</span></h2>
-      <p class="section-lead reveal">Content built to rank and resonate — across consumer electronics, dev tools, and global e-commerce.</p>
+      <p class="section-lead reveal">My writing has appeared on these brands’ websites.</p>
     </div>
     <div class="reveal">
       <div class="marquee">
@@ -1309,14 +1330,14 @@
 <section id="contact" class="bordered">
   <div class="wrap">
     <div class="section-head">
-      <div class="reveal"><div class="eyebrow">12 — Get in touch</div></div>
+      <div class="reveal"><div class="eyebrow">Get in touch</div></div>
       <h2 class="section-title reveal">Let's <span class="it">talk.</span></h2>
     </div>
     <div class="contact-card reveal">
       <div class="contact-grid">
         <div>
-          <h3 class="contact-h">Open to <span class="it">part-time</span> (30 hours/week), contract, and consulting work.</h3>
-          <p class="contact-sub">Have a project in mind? Share your goals, scope, and timeline. WhatsApp is the quickest way to reach me; for detailed briefs, email me and I'll reply within 24 hours.</p>
+          <h3 class="contact-h">Looking for a writer?</h3>
+          <p class="contact-sub">I’m available for part-time work at 30 hours a week, as well as contract and consulting projects. Send me a little about what you need. I usually reply fastest on WhatsApp, or within 24 hours by email.</p>
           <div class="contact-meta">
             <div class="row"><span>Email</span><a href="mailto:piolobagotao@gmail.com">piolobagotao@gmail.com</a></div>
             <div class="row"><span>WhatsApp</span><a href="https://api.whatsapp.com/send?phone=639666856413" target="_blank" rel="noopener">+63 966 685 6413</a></div>
@@ -1326,12 +1347,12 @@
         <div class="actions">
           <a class="action" href="https://calendly.com/piolobagotao" target="_blank" rel="noopener">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-            <span class="lab"><strong>Book a conversation</strong><small>Pick a slot on my calendar</small></span>
+            <span class="lab"><strong>Schedule a call</strong><small>Pick a slot on my calendar</small></span>
             <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           </a>
           <a class="action" href="mailto:piolobagotao@gmail.com?subject=Hi%20Piolo%20%E2%80%94%20Let%27s%20Work%20Together">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-            <span class="lab"><strong>Email me</strong><small>Best for longer briefs</small></span>
+            <span class="lab"><strong>Email me</strong><small>Send me the details</small></span>
             <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           </a>
           <a class="action" href="https://api.whatsapp.com/send?phone=639666856413&amp;text=Hi%20Piolo%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20part-time%20opportunity." target="_blank" rel="noopener">
@@ -1368,7 +1389,7 @@
       </div>
     </div>
     <div class="foot-bot">
-      <div>© <span id="year"></span> Piolo Bagotao · Built with <span class="it">intention.</span></div>
+      <div>© <span id="year"></span> Piolo Bagotao</div>
     </div>
   </div>
 </footer>
@@ -1381,99 +1402,6 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // ===== Process flow interactive =====
-  (function flowInteractive() {
-    const ICONS = {
-      listen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="9" x2="6" y2="15"/><line x1="10" y1="6" x2="10" y2="18"/><line x1="14" y1="4" x2="14" y2="20"/><line x1="18" y1="8" x2="18" y2="16"/></svg>',
-      audit:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="5" y="14" width="3" height="6"/><rect x="10.5" y="10" width="3" height="10"/><rect x="16" y="6" width="3" height="14"/></svg>',
-      plan:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>',
-      build:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
-      refine: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg>',
-    };
-    const CHECK = '<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
-    const steps = [
-      { num: '01', title: 'Listen', icon: ICONS.listen,
-        desc: "Understand what you actually need. Read the brief, ask the questions nobody asked, and figure out what success looks like — whether it's a single post, a campaign, or a whole content engine.",
-        bullets: ['Brief reading & discovery calls', 'Audience & brand research', 'Define what success means'],
-        outcome: "A short, written brief that captures the goals, the audience, and what 'done' looks like — so we're aligned before any work starts.",
-        tags: ['Discovery', 'Brief', 'Goals'] },
-      { num: '02', title: 'Audit', icon: ICONS.audit,
-        desc: "Look at what's already there. What's working, what's not, what's missing? Whether it's a website, a content library, a social feed, or a workflow.",
-        bullets: ['Current state review', 'Gaps & opportunities', 'References & benchmarks'],
-        outcome: "A prioritized list of fixes and opportunities — ranked by impact, so you know exactly where the easy wins are.",
-        tags: ['Review', 'Gaps', 'Benchmarks'] },
-      { num: '03', title: 'Plan', icon: ICONS.plan,
-        desc: "Decide what to make and in what order. Outline the pieces, set priorities, and map them to a realistic timeline so nothing slips through the cracks.",
-        bullets: ['Concept & outline', 'Priority order', 'Timeline & deliverables'],
-        outcome: "A concrete roadmap — what gets made, in what order, with realistic dates and owners.",
-        tags: ['Concepts', 'Priorities', 'Timeline'] },
-      { num: '04', title: 'Build', icon: ICONS.build,
-        desc: "The part where the work actually happens. Write, design, post, optimize, automate — whatever this project needs to ship at a quality you can stand behind.",
-        bullets: ['Write, design, produce', 'Polish & quality check', 'Ship with the right setup'],
-        outcome: "Finished, on-brand work — published, scheduled, or handed over and ready to perform.",
-        tags: ['Make', 'Polish', 'Ship'] },
-      { num: '05', title: 'Refine', icon: ICONS.refine,
-        desc: "Measure what landed, learn from it, improve the next batch. The loop closes here — and then opens again, sharper than before.",
-        bullets: ['Performance & feedback review', 'Find opportunities for automation', 'A documented system'],
-        outcome: "A clear performance report plus a written playbook of what works — so the next round is faster, better, and compounds on the last one.",
-        tags: ['Measure', 'Iterate', 'Playbook'] },
-    ];
-    const row = document.getElementById('flowRow');
-    const panel = document.getElementById('flowPanel');
-    const numEl = document.getElementById('flowNum');
-    const titleEl = document.getElementById('flowTitle');
-    const descEl = document.getElementById('flowDesc');
-    const outTextEl = document.getElementById('flowOutText');
-    const bulletsEl = document.getElementById('flowBullets');
-    const tagsEl = document.getElementById('flowTags');
-    const iconBigEl = document.getElementById('flowIconBig');
-    const progEl = document.getElementById('flowProgress');
-    if (!row || !panel) return;
-    const stepBtns = row.querySelectorAll('.proc-step');
-    let active = -1;
-    let auto = null;
-
-    function renderProgress(running) {
-      progEl.classList.remove('running');
-      void progEl.offsetWidth;
-      if (running) progEl.classList.add('running');
-    }
-
-    function setActive(i, fromUser) {
-      if (i === active) return;
-      active = i;
-      stepBtns.forEach((b, idx) => {
-        b.classList.toggle('active', idx === i);
-        b.setAttribute('aria-pressed', String(idx === i));
-        b.setAttribute('aria-controls', 'flowPanel');
-      });
-      panel.classList.add('swapping');
-      setTimeout(() => {
-        const s = steps[i];
-        numEl.textContent = s.num;
-        titleEl.textContent = s.title;
-        descEl.textContent = s.desc;
-        iconBigEl.innerHTML = s.icon;
-        bulletsEl.innerHTML = s.bullets.map(b => `<div class="flow-bullet">${CHECK}<span>${b}</span></div>`).join('');
-        outTextEl.textContent = s.outcome;
-        tagsEl.innerHTML = s.tags.map(t => `<span class="flow-tag">${t}</span>`).join('');
-        panel.classList.remove('swapping');
-      }, 240);
-      if (fromUser && auto) { clearInterval(auto); auto = null; renderProgress(false); }
-      else renderProgress(false);
-    }
-
-    stepBtns.forEach((b, i) => {
-      b.addEventListener('click', () => setActive(i, true));
-
-    });
-
-    // initial render (without animating from -1)
-    setActive(0, false);
-
-    // Steps remain visible until the visitor chooses another.
-  })();
 
   // ===== Theme =====
   document.getElementById('themeBtn').addEventListener('click', () => {
@@ -1544,108 +1472,6 @@
     if (!_ticking) { requestAnimationFrame(() => { onScroll(); _ticking = false; }); _ticking = true; }
   }, { passive: true });
   onScroll();
-
-  // ===== Cursor glow =====
-  (function attachCursorGlow() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (window.matchMedia('(hover: none)').matches) return;
-    const glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    document.body.appendChild(glow);
-    let raf = null, hideTimer = null;
-    window.addEventListener('mousemove', (e) => {
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        glow.style.setProperty('--cx', e.clientX + 'px');
-        glow.style.setProperty('--cy', e.clientY + 'px');
-        glow.classList.add('active');
-        if (hideTimer) clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => glow.classList.remove('active'), 1800);
-      });
-    }, { passive: true });
-    document.addEventListener('mouseleave', () => glow.classList.remove('active'));
-  })();
-
-  // ===== Magnetic buttons =====
-  (function attachMagnetic() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (window.matchMedia('(hover: none)').matches) return;
-    document.querySelectorAll('.btn.magnetic').forEach(btn => {
-      let raf = null;
-      btn.addEventListener('mousemove', (e) => {
-        if (raf) cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(() => {
-          const r = btn.getBoundingClientRect();
-          const x = (e.clientX - r.left - r.width / 2) * 0.25;
-          const y = (e.clientY - r.top - r.height / 2) * 0.35;
-          btn.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
-        });
-      });
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
-      });
-    });
-  })();
-
-  // ===== Magnetic 3D tilt on cards =====
-  (function attachTilt() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (window.matchMedia('(hover: none)').matches) return;
-    document.querySelectorAll('.stat, .skill-card').forEach(card => {
-      let raf = null;
-      card.addEventListener('mouseenter', () => card.classList.add('hovering'));
-      card.addEventListener('mousemove', (e) => {
-        if (raf) cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(() => {
-          const r = card.getBoundingClientRect();
-          const x = (e.clientX - r.left) / r.width;
-          const y = (e.clientY - r.top) / r.height;
-          const rx = (0.5 - y) * 8;
-          const ry = (x - 0.5) * 10;
-          card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
-          card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
-          card.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
-          card.style.setProperty('--my', (y * 100).toFixed(1) + '%');
-        });
-      });
-      card.addEventListener('mouseleave', () => {
-        card.classList.remove('hovering');
-        card.style.setProperty('--rx', '0deg');
-        card.style.setProperty('--ry', '0deg');
-      });
-    });
-  })();
-
-  // ===== Count-up stats =====
-  function countUp(textNode, target, duration) {
-    const start = performance.now();
-    function tick(now) {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      textNode.nodeValue = String(Math.floor(target * eased));
-      if (t < 1) requestAnimationFrame(tick);
-      else textNode.nodeValue = String(target);
-    }
-    requestAnimationFrame(tick);
-  }
-  const statsIO = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { statsIO.unobserve(entry.target); return; }
-      entry.target.querySelectorAll('.stat-num').forEach((numEl, i) => {
-        let txt = null;
-        for (const n of numEl.childNodes) { if (n.nodeType === 3 && n.nodeValue.trim()) { txt = n; break; } }
-        if (!txt) return;
-        const target = parseInt(txt.nodeValue.replace(/\D/g, ''), 10);
-        if (!isFinite(target)) return;
-        txt.nodeValue = '0';
-        setTimeout(() => countUp(txt, target, 1400 + i * 80), 220 + i * 130);
-      });
-      statsIO.unobserve(entry.target);
-    });
-  }, { threshold: 0.25 });
-  const sg = document.getElementById('statsGrid');
-  if (sg) statsIO.observe(sg);
 
   // ===== Lightbox =====
   const lb = document.getElementById('lightbox');
@@ -1884,7 +1710,7 @@
       probe.onerror = () => {};
       probe.src = `images/brands/${b.logo}`;
     });
-    setupInfiniteScroll(track, 7, 4);
+    // Keep client names still and easy to read.
   })();
 
   // ===== Infinite scroll engine =====
@@ -1904,7 +1730,7 @@
     if (!original.length) return null;
     // Clone once for seamless wrap
     original.forEach(n => track.appendChild(n.cloneNode(true)));
-    // Disable any CSS keyframe animation on this track — we drive it via JS
+    // Disable any CSS keyframe animation on this track – we drive it via JS
     track.style.animation = 'none';
 
     const speed = opts.speed || 60; // px/s
