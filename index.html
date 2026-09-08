@@ -272,7 +272,7 @@
   .about-meta dd { font-size: 14px; color: var(--ink); }
 
   /* ============ RESULTS ============ */
-  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
   @media (max-width: 880px) { .results-grid { grid-template-columns: 1fr; } }
   .result {
     position: relative;
@@ -296,6 +296,9 @@
   .result-img .ph .lbl { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
   .result-foot { padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
   .result-foot .name { font-size: 14px; color: var(--ink); }
+  .result-caption { margin-top: 6px; font-size: 13px; line-height: 1.5; color: var(--ink-soft); }
+  .result-foot { gap: 12px; }
+  .result-foot .tag { flex-shrink: 0; }
   .result-foot .tag { font-size: 11px; color: var(--accent); padding: 4px 10px; background: var(--accent-soft); border-radius: 999px; }
 
   /* ============ EXPERIENCE ============ */
@@ -969,7 +972,7 @@
     <div class="hero-grid">
       <div>
         <h1 class="hero-name reveal">Piolo <span class="it">Bagotao.</span></h1>
-        <p class="hero-tag reveal"><b>I’m a content writer and SEO specialist with 3+ years of experience.</b> I specialize in SEO, from planning topic clusters and writing articles to technical optimization. I also create and manage social media content, and design WordPress websites with Elementor and Kadence Blocks. I manage content teams, set up marketing workflows in GHL, and build automations with n8n and Google Sheets. I use Claude for research and drafting support, then edit and prepare the content for publishing.</p>
+        <p class="hero-tag reveal"><b>I’m a content writer and SEO specialist with 3+ years of experience.</b> I specialize in SEO, covering keyword research, content writing, internal linking, image design, schema markup, sitemaps, analytics, workflow management, and reporting. I also create and manage social media content and design WordPress websites using Elementor or Kadence Blocks. I manage content teams, set up marketing workflows in GHL, and build automations with Claude or n8n. My experience also includes customer relations, talent acquisition and management, payroll processing, and website debugging.</p>
         <div class="cta-row reveal">
           <a class="btn primary magnetic" href="#contact">
             Get in touch
@@ -1079,7 +1082,7 @@
     <div class="section-head">
       <div class="reveal"><div class="eyebrow">Stats &amp; Results</div></div>
       <h2 class="section-title reveal">Results from <span class="it">client work.</span></h2>
-      <p class="section-lead reveal">These screenshots show search performance for sites I’ve worked on. The first covers six months, with 48.3K clicks, 4.33M impressions, and an average position of 7.4. Click any image to see the full report.</p>
+      <p class="section-lead reveal">These screenshots show search and social media performance from my client work.</p>
     </div>
     <div class="results-grid stagger" id="resultsGrid"></div>
   </div>
@@ -1097,7 +1100,7 @@
         <div class="exp-idx">01</div>
         <div class="exp-role">SEO &amp; Operations Lead</div>
         <div class="exp-co">Majestix Collection<small>Luxury watch platform</small></div>
-        <div class="exp-date">Sep 2025 – Present</div>
+        <div class="exp-date">Sep 2025 – Aug 2026</div>
       </div>
       <div class="exp-row">
         <div class="exp-idx">02</div>
@@ -1613,6 +1616,7 @@
       { file: 'result-1.png', name: 'Luxury Watch Business', tag: 'GSC' },
       { file: 'result-2.png', name: 'Consumer e-commerce', tag: 'Semrush' },
       { file: 'result-3.png', name: 'Lifestyle Blog', tag: 'Semrush' },
+      { file: 'social-media-results.png', name: '100K+ social media views', tag: 'Social media', description: 'From a page created from scratch.' },
     ];
     items.forEach(item => {
       const card = document.createElement('div');
@@ -1622,7 +1626,7 @@
           <div class="ph"><div class="plus">+</div><div class="lbl">Screenshot</div></div>
         </div>
         <div class="result-foot">
-          <div class="name">${item.name}</div>
+          <div class="name">${item.name}${item.description ? `<p class="result-caption">${item.description}</p>` : ''}</div>
           <div class="tag">${item.tag}</div>
         </div>
       `;
