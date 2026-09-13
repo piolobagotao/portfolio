@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-piolo-s-projects.vercel.app/sitemap.xml
