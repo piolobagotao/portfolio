@@ -63,3 +63,12 @@ nav .theme-toggle{position:absolute;right:24px;top:12px}
 nav .navlink{font-size:13px!important;min-height:28px}
 html{scroll-padding-top:180px}
 }
+
+/* Identity links use the existing typography and spacing. */
+.related-link{margin:var(--space-4) 0 0;font-size:14px;line-height:1.6;color:var(--color-neutral-400)}
+
+/* Semantic equivalents retain the existing label and skill typography. */
+.eyebrow{font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:13px;line-height:1.12;letter-spacing:.08em;text-transform:uppercase;margin:0 0 var(--space-2)}
+.legacy-h4{font-size:20px}
+.skip-link{position:fixed;z-index:100;top:8px;left:12px;padding:10px 16px;background:var(--color-bg);color:var(--color-text);border:1px solid var(--color-accent);border-radius:var(--radius-md);transform:translateY(-200%)}
+.skip-link:focus{transform:none}
